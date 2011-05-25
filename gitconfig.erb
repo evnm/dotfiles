@@ -1,0 +1,30 @@
+[user]
+	name = <%= print("Your name: "); STDOUT.flush; STDIN.gets.chomp %>
+	email = <%= print("Your email: "); STDOUT.flush; STDIN.gets.chomp %>
+
+[github]
+        user = <%= print("GitHub username: "); STDOUT.flush; STDIN.gets.chomp %>
+        token = <%= print("GitHub API token: "); STDOUT.flush; STDIN.gets.chomp %>
+
+[core]
+	editor = zile
+	whitespace = trailing-space,space-before-tab
+	excludesfile = <%= ENV['HOME'] %>/.gitignore
+
+[apply]
+        whitespace = fix
+
+[diff]
+        renames = copy
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+        ui = true
+        pager = true
+
+[alias]
+        st = status
+        co = checkout
