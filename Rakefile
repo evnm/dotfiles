@@ -1,3 +1,4 @@
+require 'erb'
 require 'rake'
 
 desc "install dotfiles in user's home directory"
@@ -7,12 +8,12 @@ task :install do
     next if %w[Rakefile README.md LICENSE].include? file
 
     if File.exist? File.join(ENV['HOME'], ".#{file}")
-      if File.identical? file, File.join(ENV['HOME'], ".#{file}")
-        puts "Identical #{file} already installed."
+      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
+        puts "Identical #{file.sub('.erb', '')} already installed."
       elsif replace_all
         replace_file(file)
       else
-        print "File already exists: ~/.#{file}. Overwrite it? [y,n,q,a,?] "
+        print "File already exists: ~/.#{file.sub('.erb', '')}. Overwrite it? [y,n,q,a,?] "
         case $stdin.gets.chomp
         when 'y'
           replace_file(file)
@@ -37,14 +38,21 @@ end
 
 # Replace the given dotfile in $HOME with the target file.
 def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file}"}
+  system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
 end
 
 # Create a symlink to the target file in $HOME.
 def link_file(file)
-  puts "Linking #{file} to home directory."
-  system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+  if file =~ /.erb$/
+    puts "Generating ~/.#{file.sub('.erb', '')}."
+    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
+      new_file.write ERB.new(File.read(file)).result(binding)
+    end
+  else
+    puts "Linking #{file} to home directory."
+    system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+  end
 end
 
 task :default => 'install'
