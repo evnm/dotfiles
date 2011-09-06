@@ -65,8 +65,6 @@ function prompt_color() {
 # Shell environment
 #-------------------------------------------------------------------------------
 
-export EDITOR="/usr/local/bin/emacsclient"
-
 # Homebrew
 [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
 
