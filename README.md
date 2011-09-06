@@ -3,7 +3,7 @@
 These be my dotfiles.
 
 ## Installation
-    git clone git://github.com/evnm/dotfiles.git ~/.dotfiles
+    git clone --recursive git://github.com/evnm/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     rake install
 
