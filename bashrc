@@ -96,3 +96,6 @@ PATH=$SCALA_HOME/bin:$PATH
 
 # Set default prompt if interactive
 test -n "$PS1" && prompt_color
+
+# Colorful wisdom at login
+fortune | cowsay | lolcat
