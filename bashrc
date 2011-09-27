@@ -98,4 +98,4 @@ PATH=$SCALA_HOME/bin:$PATH
 test -n "$PS1" && prompt_color
 
 # Colorful wisdom at login
-fortune | cowsay | lolcat
+fortune -s | cowsay | lolcat
