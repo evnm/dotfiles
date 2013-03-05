@@ -11,15 +11,12 @@ unset MAILCHECK
 # Default umask
 umask 0022
 
-
 #-------------------------------------------------------------------------------
 # Path
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/Users/evan/bin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
-export PATH=/Users/evan/bin:$PATH
-
 
 #-------------------------------------------------------------------------------
 # Aliases
