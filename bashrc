@@ -41,6 +41,8 @@ alias tw='python ~/.t/t.py --task-dir ~/Dropbox/tasks --list work'
 # Autocomplete for 'g' as well
 complete -o default -o nospace -F _git g
 
+# Vagrant
+alias vag='vagrant'
 
 #-------------------------------------------------------------------------------
 # Prompt
