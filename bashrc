@@ -70,24 +70,17 @@ fi
 # EC2 stuff.
 export EC2_HOME="$HOME/.ec2"
 export PATH=$PATH:$EC2_HOME/bin
-export EC2_PRIVATE_KEY=$EC2_HOME/pk-4MUJK6KEEQRYEM6JOBBE7K366LEJSROD.pem
-export EC2_CERT=$EC2_HOME/cert-4MUJK6KEEQRYEM6JOBBE7K366LEJSROD.pem
 
 # Set java home
 if [[ `uname` == "Darwin" ]]; then
-JAVA_HOME=`/usr/libexec/java_home`
+  export JAVA_HOME=`/usr/libexec/java_home`
 elif [[ `uname` == "Linux" ]]; then
-JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+  export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
 fi
-export JAVA_HOME
 
 # RVM
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# Node.js stuff
-[[ -s "$HOME/.node_libraries/.npm/npm/active/package/npm-completion.sh" ]] &&
-. "$HOME/.node_libraries/.npm/npm/active/package/npm-completion.sh"
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
 
 # Scala stuff
 SCALA_HOME=~/.scala
