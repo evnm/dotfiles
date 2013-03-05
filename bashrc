@@ -91,3 +91,15 @@ test -n "$PS1" && prompt_color
 
 # Colorful wisdom at login
 fortune -s | cowsay | lolcat
+
+export EDITOR=`which zile`
+
+# Increase max open fd limit.
+ulimit -n 2048
+
+## Run zinc (Typesafe incremental Scala compiler)
+which zinc > /dev/null && zinc -nailed -start > /dev/null
+alias zvn="mvn -Pzinc"
+
+# autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
