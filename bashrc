@@ -63,7 +63,9 @@ PS1="\[\033[G\]$PS1"
 #-------------------------------------------------------------------------------
 
 # Homebrew
-[[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 # EC2 stuff.
 export EC2_HOME="$HOME/.ec2"
