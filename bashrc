@@ -24,7 +24,6 @@ export MANPATH=/usr/local/man:$MANPATH
 
 alias ls='ls -G'
 alias ll='ls -la'
-alias attu='ssh meagher@attu.cs.washington.edu'
 
 # Emacs
 alias emacs='emacsclient --no-wait'
