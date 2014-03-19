@@ -15,8 +15,8 @@ umask 0022
 # Path
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/bin:/Users/evan/bin:$PATH
-export MANPATH=/usr/local/man:$MANPATH
+export PATH="/usr/local/bin:/Users/evan/bin:$PATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 #-------------------------------------------------------------------------------
 # Aliases
@@ -32,10 +32,6 @@ alias e='emacs'
 # Git
 alias git='hub'
 alias g='git'
-
-# t (Python todo list program)
-alias t='python ~/.t/t.py --task-dir ~/Dropbox/tasks --list tasks'
-alias tw='python ~/.t/t.py --task-dir ~/Dropbox/tasks --list work'
 
 # Autocomplete for 'g' as well
 complete -o default -o nospace -F _git g
@@ -88,7 +84,7 @@ PATH=$SCALA_HOME/bin:$PATH
 # Set default prompt if interactive
 test -n "$PS1" && prompt_color
 
-# Colorful wisdom at login
+# Colorful bovine wisdom at login.
 fortune -s | cowsay | lolcat
 
 export EDITOR=`which zile`
@@ -99,6 +95,7 @@ ulimit -n 2048
 ## Run zinc (Typesafe incremental Scala compiler)
 which zinc > /dev/null && zinc -nailed -start > /dev/null
 alias zvn="mvn -Pzinc"
+export MAVEN_OPTS="-Xmx2G"
 
 # autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
