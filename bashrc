@@ -15,7 +15,7 @@ umask 0022
 # Path
 #-------------------------------------------------------------------------------
 
-export PATH="/usr/local/bin:/Users/evan/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
 #-------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ fi
 
 # EC2 stuff.
 export EC2_HOME="$HOME/.ec2"
-export PATH=$PATH:$EC2_HOME/bin
+export PATH="$PATH:$EC2_HOME/bin"
 
 # Set java home
 if [[ `uname` == "Darwin" ]]; then
