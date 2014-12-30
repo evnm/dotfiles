@@ -26,6 +26,9 @@ alias ls='ls -G'
 alias ll='ls -la'
 
 # Emacs
+if [[ `uname` == "Darwin" ]]; then
+    alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+fi
 alias emacs='emacsclient --no-wait'
 alias e='emacs'
 
