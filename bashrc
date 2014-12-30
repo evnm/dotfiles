@@ -87,7 +87,7 @@ PATH=$SCALA_HOME/bin:$PATH
 test -n "$PS1" && prompt_color
 
 # Colorful bovine wisdom at login.
-fortune -s | cowsay | lolcat
+fortune -s | lolcat
 
 export EDITOR=`which zile`
 
