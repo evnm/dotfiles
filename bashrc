@@ -33,7 +33,6 @@ alias emacs='emacsclient --no-wait'
 alias e='emacs'
 
 # Git
-alias git='hub'
 alias g='git'
 
 # Autocomplete for 'g' as well
