@@ -48,7 +48,7 @@ alias vag='vagrant'
 # user@hostcwd[ (git branch)]$
 function prompt_color() {
     # NOTE: Used to prepend with "\u@\h".
-    PS1="\[$(tput setaf 7)\]\W\[$(tput setaf 1)\]\$(git branch 2>/dev/null|cut -f2 -d\* -s)\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+    PS1="\[$(tput setaf 7)\]\W\[$(tput setaf 1)\]\$(git branch 2>/dev/null|cut -f2 -d\* -s)\[$(tput setaf 7)\] ¢ \[$(tput sgr0)\]"
 }
 
 # Glue the prompt to the first column.
