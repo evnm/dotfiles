@@ -1,12 +1,11 @@
 # Evan Meagher's dotfiles
 
-These be my dotfiles.
+My dotfiles for basics like bash, tmux, git, etc.
 
 ## Installation
-    git clone --recursive git://github.com/evnm/dotfiles.git ~/.dotfiles
-    cd ~/.dotfiles
-    rake install
 
-## TODO
- * Finish this README
- * Clean up bashrc
+```
+git clone https://github.com/evnm/dotfiles
+cd dotfiles
+make install
+```
