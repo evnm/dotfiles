@@ -2,6 +2,9 @@
 # Shell Options
 #-------------------------------------------------------------------------------
 
+# Silence Bash deprecation warning in macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Notify bg task completion immediately
 set -o notify
 
