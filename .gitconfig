@@ -25,6 +25,7 @@
         mom = merge origin/master
         dom = diff origin/master
         pom = pull origin master
+        rom = rebase origin/master
 
 [push]
         default = simple
