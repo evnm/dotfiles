@@ -128,3 +128,11 @@ if [[ `uname` == "Darwin" ]]; then
     start_agent;
   fi
 fi
+
+# Source all additional bashrc files.
+# Inspiration: https://write.as/bpsylevc6lliaspe
+BASHRC_D=~/.config/bash
+for file in ${BASHRC_D}/*.sh; do
+  [[ -r $file ]] && . $file
+done
+unset file
