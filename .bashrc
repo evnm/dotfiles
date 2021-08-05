@@ -30,12 +30,11 @@ alias ll='ls -la'
 alias less='less -r'
 export PAGER="less"
 alias g='git'
-alias e='emacs'
+alias e='emacsclient --no-wait'
 
 # Emacs
 if [[ `uname` == "Darwin" ]]; then
   alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-  alias emacs='emacsclient --no-wait'
 fi
 
 # Completion
