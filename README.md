@@ -5,7 +5,7 @@ My dotfiles for basics like bash, tmux, git, etc.
 ## Installation
 
 ```
-git clone https://github.com/evnm/dotfiles
+git clone git@github.com:evnm/dotfiles.git
 cd dotfiles
 make install
 ```
