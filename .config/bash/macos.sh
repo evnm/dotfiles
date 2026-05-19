@@ -3,6 +3,8 @@
 # Silence Bash deprecation warning in macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+eval "$($(brew --prefix)/bin/brew shellenv)"
+
 alias emacsclient="$(brew --prefix)/bin/emacsclient"
 
 # Bash completion
