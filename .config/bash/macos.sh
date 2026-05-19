@@ -5,6 +5,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 eval "$($(brew --prefix)/bin/brew shellenv)"
 
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+
 alias emacsclient="$(brew --prefix)/bin/emacsclient"
 
 # Bash completion
