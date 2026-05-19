@@ -26,6 +26,7 @@
         co = checkout
         br = branch
         vomit = commit -v
+	amend = commit --amend
         mom = merge origin/main
         dom = diff origin/main
         pom = pull origin main
