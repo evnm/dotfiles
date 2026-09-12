@@ -22,11 +22,8 @@ fi
 
 # Terminal prompt setup.
 . "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
-# Purple
-#PS1="\[$(tput setaf 183)\]\w \$(__git_ps1 '%s ')\[$(tput setaf 250)\]¢ \[$(tput sgr0)\]"
-# Orange
-PS1="\[$(tput setaf 94)\]\w \[$(tput setaf 172)\]\$(__git_ps1 '%s ')\[$(tput setaf 250)\]¢ \[$(tput sgr0)\]"
-
+# Evergarden lime (https://evergarden.moe/)
+PS1="\[$(tput setaf 187)\]\w \[$(tput setaf 107)\]\$(__git_ps1 '%s ')\[$(tput setaf 250)\]¢ \[$(tput sgr0)\]"
 # Glue the prompt to the first column.
 # NOTE: This is disabled, as it screws with virtualenv prompt injection.
 # Source: http://jonisalonen.com/2012/your-bash-prompt-needs-this/
