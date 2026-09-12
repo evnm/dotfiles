@@ -13,7 +13,7 @@ if [ -z "$PS1" ]; then
     return
 fi
 
-export PATH="/usr/local/bin:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export PAGER="less"
 
