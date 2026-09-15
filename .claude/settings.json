@@ -29,6 +29,11 @@
             "type": "command",
             "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/claude-status-subagent.sh reset",
+            "timeout": 5
           }
         ]
       }
@@ -42,6 +47,11 @@
             "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/claude-status-subagent.sh reset",
+            "timeout": 5
           }
         ]
       }
@@ -55,6 +65,23 @@
             "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/claude-status-subagent.sh start",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/claude-status-subagent.sh stop",
+            "timeout": 5
           }
         ]
       }
@@ -103,7 +130,8 @@
           },
           {
             "type": "command",
-            "command": "tmux set-option -w -t \"$TMUX_PANE\" @claude_status '✓'"
+            "command": "$HOME/.claude/hooks/claude-status-stop.sh",
+            "timeout": 5
           }
         ]
       }
