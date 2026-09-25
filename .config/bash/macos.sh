@@ -57,4 +57,6 @@ start_agent() {
 }
 
 [ -f "${SSH_ENV}" ] && . "${SSH_ENV}" > /dev/null
-kill -0 "${SSH_AGENT_PID}" 2>/dev/null || start_agent
+# Probe the socket rather than the PID, which can be reused after a
+# reboot. ssh-add exits 2 when it can't reach an agent.
+ssh-add -l >/dev/null 2>&1; [ $? -eq 2 ] && start_agent
