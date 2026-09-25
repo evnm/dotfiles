@@ -32,7 +32,11 @@ if ! WORKTREE_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"; then
   exit 0
 fi
 
-GIT_COMMON_DIR="$(git rev-parse --git-common-dir 2>/dev/null || true)"
+# --path-format=absolute: without it, git prints this path relative to the
+# *cwd* (e.g. "../../.git" from a subdirectory), and resolving that against
+# WORKTREE_ROOT below walks out of the repo, making MAIN_ROOT a parent
+# directory like $HOME and flagging every path under it.
+GIT_COMMON_DIR="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || true)"
 if [[ -z "$GIT_COMMON_DIR" ]]; then
   exit 0
 fi
