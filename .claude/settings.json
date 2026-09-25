@@ -216,6 +216,7 @@
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true
   },
+  "feedbackSurveyRate": 0,
   "spinnerVerbs": {
     "mode": "append",
     "verbs": [
