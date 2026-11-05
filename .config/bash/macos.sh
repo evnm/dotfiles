@@ -46,17 +46,6 @@ PS1="\[$(tput setaf 187)\]\$(__ps1_location) \[$(tput setaf 107)\]\$(__ps1_branc
 # Source: http://jonisalonen.com/2012/your-bash-prompt-needs-this/
 PS1="\[\033[G\]$PS1"
 
-# Ensure ssh-agent is run at most once per boot.
-SSH_ENV="$HOME/.ssh/environment"
-
-start_agent() {
-  /usr/bin/ssh-agent | sed '/^echo/d' > "${SSH_ENV}"
-  chmod 600 "${SSH_ENV}"
-  . "${SSH_ENV}" > /dev/null
-  /usr/bin/ssh-add
-}
-
-[ -f "${SSH_ENV}" ] && . "${SSH_ENV}" > /dev/null
-# Probe the socket rather than the PID, which can be reused after a
-# reboot. ssh-add exits 2 when it can't reach an agent.
-ssh-add -l >/dev/null 2>&1; [ $? -eq 2 ] && start_agent
+# No ssh-agent setup here: macOS's launchd starts an agent per login and
+# sets SSH_AUTH_SOCK, and ~/.ssh/config (UseKeychain, AddKeysToAgent)
+# loads keys into it using passphrases stored in the login Keychain.
