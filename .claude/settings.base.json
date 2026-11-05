@@ -43,6 +43,11 @@
             "type": "command",
             "command": "$HOME/.claude/hooks/claude-status-subagent.sh reset",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/tmux-pane-session.sh start",
+            "timeout": 5
           }
         ]
       }
@@ -60,6 +65,11 @@
           {
             "type": "command",
             "command": "$HOME/.claude/hooks/claude-status-subagent.sh reset",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/tmux-pane-session.sh end",
             "timeout": 5
           }
         ]
